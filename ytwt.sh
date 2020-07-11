@@ -7,8 +7,8 @@
 # -------------------------------
 
 
-MINI=10; 					#Minimum amount of watchtime in seconds
-MAX=20; 					#Maximum amount of watchtime in seconds
+MINI=260; 					#Minimum amount of watchtime in seconds
+MAX=600; 					#Maximum amount of watchtime in seconds
 RANGE=$(($MAX-$MINI+1));
 RESULT=$RANDOM;
 let "RESULT %= $RANGE";
@@ -16,11 +16,11 @@ RESULT=$(($RESULT+$MINI));
 #echo $RESULT
 while :
 	do
-
+echo "Random time is $RESULT seconds"
 #timeout $(RESULT)s -k $(firefox -new-tab YTLINK)
 timeout $RESULT bash -c "xargs -a url.txt firefox -url -new-tab '$line'"
 
 	date
 	echo "From the TOP!"
-	sleep 1
+	sleep 10
 done
