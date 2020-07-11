@@ -5,7 +5,8 @@
 #	example: https://www.youtube.com/watch?v=gY_KujhVW6s?autoplay=1
 #
 # -------------------------------
-
+while :
+	do
 
 MINI=260; 					#Minimum amount of watchtime in seconds
 MAX=600; 					#Maximum amount of watchtime in seconds
@@ -14,8 +15,6 @@ RESULT=$RANDOM;
 let "RESULT %= $RANGE";
 RESULT=$(($RESULT+$MINI));
 #echo $RESULT
-while :
-	do
 echo "Random time is $RESULT seconds"
 #timeout $(RESULT)s -k $(firefox -new-tab YTLINK)
 timeout $RESULT bash -c "xargs -a url.txt firefox -url -new-tab '$line'"
