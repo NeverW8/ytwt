@@ -14,9 +14,9 @@ RANGE=$(($MAX-$MINI+1));
 RESULT=$RANDOM;
 let "RESULT %= $RANGE";
 RESULT=$(($RESULT+$MINI));
-#echo $RESULT
+
 echo "Random time is $RESULT seconds"
-#timeout $(RESULT)s -k $(firefox -new-tab YTLINK)
+
 timeout $RESULT bash -c "xargs -a url.txt firefox -url -new-tab '$line'"
 
 	date
