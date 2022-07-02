@@ -33,4 +33,4 @@ A: Youtube calculate views/watchtime weirdly and it can take some time, try chan
 
 # Socials
 
-https://twitter.com/sheikuru
+
